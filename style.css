@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.slider {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  background-color: blueviolet;
+}
+
+.main {
+  background-color: darkcyan;
+}
+
+.about {
+  background-color: forestgreen;
+}
+
+.experience {
+  background-color: darkorange;
+}
+
+.end {
+  background-color: darkred;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 60px;
+  -webkit-box-shadow: 0px 4px 24px 0px rgb(56, 57, 65);
+  -moz-box-shadow: 0px 4px 24px 0px rgb(56, 57, 65);
+  box-shadow: 0px 4px 24px 0px rgb(56, 57, 65);
+  min-width: 800px;
+  border-radius: 6px;
+}
+
+h1, h2, h3, p {
+  color: rgb(48, 48, 48);
+  line-height: 150%;
+  font-family: "comic sans ms";
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+  font-size: 72px;
+  margin-bottom: 36px;
+}
+
+h2 {
+  margin-bottom: 36px;
+  font-size: 60px;
+}
+
+h3 {
+  margin-bottom: 36px;
+  font-size: 48px;
+}
+
+strong {
+    font-style: italic;
+    font-size: 24px;
+}
+
+p, .text {
+    max-width: 800px;
+    font-family: 'poppins';
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+button {
+  margin-top: 60px;
+  padding: 15px 30px;
+  border-radius: 100px;
+  border: none;
+  font-family: 'poppins';
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(26, 171, 219);
+  animation: buttonColor 6s infinite;
+  transition: .5s transform;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+
+#secret {
+
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(24, 25, 39);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+span {
+  position: absolute;
+  color: white;
+  left: -300px;
+  animation: 20s endText infinite;
+}
+
+.animate {
+  display: flex !important;
+  animation: secretAnimation 2s;
+}
+
+/* super tajny kod dla animacji */
+@keyframes buttonColor {
+  0%   {background-color:rgb(238, 77, 77);}
+  25%  {background-color:rgb(222, 222, 12);}
+  50%  {background-color:rgb(32, 125, 246); }
+  75%  {background-color:rgb(39, 213, 39);}
+  100% {background-color:rgb(238, 77, 77); }
+}
+
+@keyframes secretAnimation {
+  0% {transform: rotate(0deg);height: 0;width: 0;}
+  100% {transform: rotate(360deg);  height: 100vh;  width: 100vw;}
+}
+
+@keyframes endText {
+  0% {left: -300px;}
+  100% {left: 60vw;}
+}
